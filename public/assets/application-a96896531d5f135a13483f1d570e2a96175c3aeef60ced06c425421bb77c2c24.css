@@ -1,3 +1,18 @@
+/* line 8, /Users/LoRyder1/Desktop/CodingPrac/Rails/Accounts2/app/assets/stylesheets/records.scss */
+.container {
+  margin: 5% auto;
+  width: 70%;
+  padding: 2%;
+  border: 3px solid black;
+  background-color: white;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+/* line 17, /Users/LoRyder1/Desktop/CodingPrac/Rails/Accounts2/app/assets/stylesheets/records.scss */
+.table {
+  border: 1px solid black;
+  width: 100%;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +25,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
