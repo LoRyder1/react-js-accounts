@@ -14,24 +14,21 @@ this.Records = React.createClass({
 
   render: function(){
     var items = this.state.records;
-    // var listItems = this.state.records.map(function(record, i){
     console.log(items);
 
-    // var listItems = function() {
-    //   return (
-    //     <tbody>
-    //       {items.map(function(object, i){
-    //         return <tr key={i}>
-    //                   {[ object.date]}
-    //                 </tr>;
-    //       })}
-    //     </tbody>
-    //   );
-    // }
+    var listItems = items.map(function(record, i){
+      return <tr key={i}>
+              <td> {record.date}</td>
+              <td> {record.title}</td>
+              <td> {record.amount}</td>
+              </tr>
+    })
 
-    // var listItems = function() {
-    //   for(item in itemes) {
-    //     return React.createElement Record, key: item.id, record: item
+    // var reactElement = React.createElement(Record, key: record.id, record: record);
+
+    // var listItems = function(){
+    //   for(record in items) {
+    //     React.createElement('tr', null, [key: record.id, record: record]);
     //   }
     // }
 
@@ -50,13 +47,11 @@ this.Records = React.createClass({
           </tr>
           </thead>
           <tbody>
-            {items.map(function(object, i) {
-              return <tr obj={object} key={i}/>;
-            })}
+            {listItems}
           </tbody>
         </table>
       </div>
-    )
+    );
   }
 })
 
