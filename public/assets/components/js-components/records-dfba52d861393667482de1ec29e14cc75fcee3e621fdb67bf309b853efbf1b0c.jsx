@@ -11,20 +11,20 @@ this.Records = React.createClass({
     }
   },
 
-  addRecord: function(record) {
-    console.log("hey");
-  },
+  // addRecord: function(record) {
+  //   console.log("hey");
+  // },
 
-  deleteRecord: function(record) {
-    records = this.state.records.slice();
-    index = records.indexOf(record);
-    records.splice(index, 1);
-    this.replaceState({records: records});
-  },
+  // deleteRecord: function(record) {
+  //   records = this.state.records.slice();
+  //   index = records.indexOf(record);
+  //   records.splice(index, 1);
+  //   this.replaceState({records: records});
+  // },
 
   render: function(){
-    var items = this.state.records;
-    var el = this;
+    // var items = this.state.records;
+    // var el = this;
 
     return (
       <div className='records'>
@@ -32,25 +32,25 @@ this.Records = React.createClass({
         <div className='row'></div>
         <RecordForm />
         <hr></hr>
-        <table className='table'>
-          <thead>
-          <tr>
-            <th>Date</th>
-            <th>Title</th>
-            <th>Amount</th>
-            <th>Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-            {items.map(function(object, i){
-              return <Record obj={object} key={i} handleDeleteRecord={el.deleteRecord} />;
-            })}
-          </tbody>
-        </table>
       </div>
     );
   }
 })
+        // <table className='table'>
+        //   <thead>
+        //   <tr>
+        //     <th>Date</th>
+        //     <th>Title</th>
+        //     <th>Amount</th>
+        //     <th>Actions</th>
+        //   </tr>
+        //   </thead>
+        //   <tbody>
+        //     {items.map(function(object, i){
+        //       return <Record obj={object} key={i} handleDeleteRecord={el.deleteRecord} />;
+        //     })}
+        //   </tbody>
+        // </table>
 
 
 // var FriendsContainer = React.createClass({

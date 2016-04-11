@@ -1,19 +1,13 @@
 this.RecordForm = React.createClass({
   getInitialState: function() {
-    return { title: '', date: '', amount: '' }
+    return { title: '', date: '', amount: '' };
   },
 
   handleChange: function(e) {
-    this.props.onUserInput (
-      this.refs.filterTextInput.value,
-      this.refs.inStockOnlyInput.checked
-    )
-  // }
-    // var name = e.target.name;
-    // var value = e.target.value;
-    // // console.log(value);
-    // this.setState({ name: e.target.value })
-    // console.log(value);
+    var name = e.target.name;
+    console.log(name);
+    // this.setState({ name: e.target.value });
+    this.setState({name: event.target.value});
   },
 
   handleSubmit: function(e) {
@@ -35,7 +29,7 @@ this.RecordForm = React.createClass({
           <input type='number' className='form-control' placeholder='Amount' name='amount'
               value={this.state.amount} onChange={this.handleChange} />
         </div>
-        <button type='submit' disabled={!this.valid}> Create record </button>
+        <button type='submit'> Create record </button>
       </form>
     )
   }
