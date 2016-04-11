@@ -54,3 +54,4 @@
         className: 'btn btn-primary'
         disabled: !@valid()
         'Create record'
+        
