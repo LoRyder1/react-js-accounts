@@ -58,3 +58,7 @@
         React.DOM.tbody null,
           for record in @state.records
             React.createElement Record, key: record.id, record: record, handleDeleteRecord: @deleteRecord, handleEditRecord: @updateRecord
+
+
+
+            
