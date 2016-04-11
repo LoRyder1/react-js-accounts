@@ -86,6 +86,8 @@ var Record = React.createClass({
     return (
       <tr>
         <td>{this.props.obj.date}</td>
+        <td>{this.props.obj.title}</td>
+        <td>{this.props.obj.amount}</td>
       </tr>
     )
   }
