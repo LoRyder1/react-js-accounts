@@ -20,6 +20,8 @@ $primary-font: Verdana, Geneva, sans-serif;
   th {
     height: 50px; 
     border: 1px solid black;
+    background-color: #1174FA;
+    color: white;
   }
   td {
     border: 1px solid black;
@@ -34,4 +36,5 @@ $primary-font: Verdana, Geneva, sans-serif;
   tr:nth-child(even) {
     background-color: #f2f2f2
   }
+
 }

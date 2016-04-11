@@ -11,8 +11,13 @@ this.Records = React.createClass({
     }
   },
 
+  deleteRecord: function(record) {
+    console.log("hey");
+  },
+
   render: function(){
     var items = this.state.records;
+    var el = this;
 
     return (
       <div className='records'>
@@ -30,7 +35,7 @@ this.Records = React.createClass({
           </thead>
           <tbody>
             {items.map(function(object, i){
-              return <Record obj={object} key={i} />;
+              return <Record obj={object} key={i} handleDeleteRecord={el.deleteRecord} />;
             })}
           </tbody>
         </table>
@@ -40,22 +45,55 @@ this.Records = React.createClass({
 })
 
 
-
 var FriendsContainer = React.createClass({
     getInitialState: function(){
       return {
         name: 'Tyler McGinnis',
-        friends: ['Jake Lingwall', 'Murphy Randall', 'Merrick Christensen']
+        friends: ['Jake Lingwall', 'Murphy Randall', 'Merrick Christensen'],
       }
+    },
+    addFriend: function(friend){
+      this.state.friends.push(friend);
+      this.setState({
+        friends: this.state.friends
+      });
     },
     render: function(){
       return (
         <div>
           <h3> Name: {this.state.name} </h3>
+          <AddFriend addNew={this.addFriend} />
           <ShowList names={this.state.friends} />
         </div>
       )
     }
+});
+
+var AddFriend = React.createClass({
+  getInitialState: function(){
+    return {
+      newFriend: ''
+    }
+  },
+  updateNewFriend: function(e){
+    this.setState({
+      newFriend: e.target.value
+    });
+  },
+  handleAddNew: function(){
+    this.props.addNew(this.state.newFriend);
+    this.setState({
+      newFriend: ''
+    });
+  },
+  render: function(){
+    return (
+        <div>
+          <input type="text" value={this.state.newFriend} onChange={this.updateNewFriend} />
+          <button onClick={this.handleAddNew}> Add Friend </button>
+        </div>
+    );
+  }
 });
 
 var ShowList = React.createClass({
@@ -73,5 +111,8 @@ var ShowList = React.createClass({
     )
   }
 });
-
-// ReactDOM.render(<FriendsContainer />, document.getElementById('app'));
+ 
+// ReactDOM.render(
+//   <FriendsContainer />,
+//   document.getElementById('app')
+// );
