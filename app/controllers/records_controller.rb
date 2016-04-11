@@ -15,7 +15,7 @@ class RecordsController < ApplicationController
 
   def destroy
     @record = Record.find(params[:id])
-    # @record.destroy
+    @record.destroy
     head :no_content
   end
 
