@@ -31,3 +31,15 @@
 #   [object props],
 #   [children ...]
 # )
+
+# var rows = [];
+# for (var i=0; i < numrows; i++) {
+#     rows.push(<ObjectRow />);
+# }
+# return <tbody>{rows}</tbody>;
+
+# <tbody>
+#     {objects.map(function(object, i){
+#         return <ObjectRow obj={object} key={i} />;
+#     })}
+# </tbody>

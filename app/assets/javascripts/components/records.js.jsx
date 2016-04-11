@@ -16,13 +16,20 @@ this.Records = React.createClass({
     var items = this.state.records;
     console.log(items);
 
-    var listItems = items.map(function(record, i){
-      return <tr key={i}>
-              <td> {record.date}</td>
-              <td> {record.title}</td>
-              <td> {record.amount}</td>
-              </tr>
-    })
+    // var listItems = items.map(function(record, i){
+    //   return 
+    //         // <tr key={i}>
+    //         //   <td> {record.date}</td>
+    //         //   <td> {record.title}</td>
+    //         //   <td> {record.amount}</td>
+    //         //   </tr>
+    //         <Record obj={record} key={i}/>
+    // })
+
+    // var listItems = items.map(function(record, i){
+    //   return 
+    //         <Record obj={record} key={i}/>
+    // })
 
     // var reactElement = React.createElement(Record, key: record.id, record: record);
 
@@ -47,13 +54,44 @@ this.Records = React.createClass({
           </tr>
           </thead>
           <tbody>
-            {listItems}
+            {items.map(function(object, i){
+              return <Record obj={object} key={i} />;
+            })}
+
+
           </tbody>
         </table>
       </div>
     );
   }
 })
+
+var Record = React.createClass({
+  // recordRow: function() {
+  //   return (
+  //     <div className="hey"> </div>
+
+  //     // <tr>
+  //     //   <td> {this.props.record.date} </td>
+  //     //   <td> {this.props.record.title} </td>
+  //     // </tr>
+  //   )
+  // },
+
+  // render: function() {
+  //   recordRow()
+  // }
+
+  render: function() {
+    return (
+      <tr>
+        <td>{this.props.obj.date}</td>
+      </tr>
+    )
+  }
+});
+
+
 
 var FriendsContainer = React.createClass({
     getInitialState: function(){
