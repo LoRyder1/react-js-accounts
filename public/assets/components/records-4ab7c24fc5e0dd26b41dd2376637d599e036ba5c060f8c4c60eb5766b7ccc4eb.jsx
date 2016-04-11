@@ -30,7 +30,7 @@ this.Records = React.createClass({
       <div className='records'>
         <h2 className='title'>Records</h2>
         <div className='row'></div>
-        <RecordForm />
+        <RecordForm handleNewRecord={this.addRecord} />
         <hr></hr>
         <table className='table'>
           <thead>
