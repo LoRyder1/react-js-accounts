@@ -12,7 +12,10 @@ this.Records = React.createClass({
   },
 
   deleteRecord: function(record) {
-    console.log("hey");
+    records = this.state.records.slice();
+    index = records.indexOf(record);
+    records.splice(index, 1);
+    this.replaceState({records: records});
   },
 
   render: function(){
