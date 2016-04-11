@@ -1,5 +1,4 @@
-this.Records = React.createClass({
-  
+this.Records = React.createClass({  
   getInitialState: function() {
     return {
       records: this.props.data
@@ -14,30 +13,6 @@ this.Records = React.createClass({
 
   render: function(){
     var items = this.state.records;
-    console.log(items);
-
-    // var listItems = items.map(function(record, i){
-    //   return 
-    //         // <tr key={i}>
-    //         //   <td> {record.date}</td>
-    //         //   <td> {record.title}</td>
-    //         //   <td> {record.amount}</td>
-    //         //   </tr>
-    //         <Record obj={record} key={i}/>
-    // })
-
-    // var listItems = items.map(function(record, i){
-    //   return 
-    //         <Record obj={record} key={i}/>
-    // })
-
-    // var reactElement = React.createElement(Record, key: record.id, record: record);
-
-    // var listItems = function(){
-    //   for(record in items) {
-    //     React.createElement('tr', null, [key: record.id, record: record]);
-    //   }
-    // }
 
     return (
       <div className='records'>
@@ -57,41 +32,12 @@ this.Records = React.createClass({
             {items.map(function(object, i){
               return <Record obj={object} key={i} />;
             })}
-
-
           </tbody>
         </table>
       </div>
     );
   }
 })
-
-var Record = React.createClass({
-  // recordRow: function() {
-  //   return (
-  //     <div className="hey"> </div>
-
-  //     // <tr>
-  //     //   <td> {this.props.record.date} </td>
-  //     //   <td> {this.props.record.title} </td>
-  //     // </tr>
-  //   )
-  // },
-
-  // render: function() {
-  //   recordRow()
-  // }
-
-  render: function() {
-    return (
-      <tr>
-        <td>{this.props.obj.date}</td>
-        <td>{this.props.obj.title}</td>
-        <td>{this.props.obj.amount}</td>
-      </tr>
-    )
-  }
-});
 
 
 

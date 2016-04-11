@@ -1,16 +1,15 @@
 this.Record = React.createClass({
   recordRow: function() {
     return (
-      <div className="hey"> </div>
-
-      // <tr>
-      //   <td> {this.props.record.date} </td>
-      //   <td> {this.props.record.title} </td>
-      // </tr>
+      <tr>
+        <td> {this.props.obj.date} </td>
+        <td> {this.props.obj.title} </td>
+        <td> {this.props.obj.amount} </td>
+      </tr>
     )
   },
 
   render: function() {
-    this.recordRow()
+    return this.recordRow()
   }
 });
